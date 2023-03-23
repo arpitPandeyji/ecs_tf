@@ -9,7 +9,7 @@ terraform {
   }
 
   cloud {
-    organization = "REPLACE_ME"
+    organization = "gh-task"
 
     workspaces {
       name = "gh-actions-demo"
