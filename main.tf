@@ -12,7 +12,7 @@ terraform {
     organization = "gh-task"
 
     workspaces {
-      name = "gh-actions-demo"
+      name = "ecs_tf"
     }
   }
 }
