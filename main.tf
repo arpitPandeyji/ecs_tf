@@ -1,12 +1,22 @@
+
 terraform {
-  backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "gh-task"
-    token = "hpnMvsl2GS8Mhg.atlasv1.431gO6ySrb4zpiqbSrFypkgbFf8ceqNr5b7uAUQNjsyJ34qn1YeKszGuFzydEWOY9ug"
-    workspaces {
-      name = "ecs_tf"
+    cloud {
+        organization = "gh-task" /// replace with your organization name
+        workspaces {
+          name = "ecs_tf" /// replace with your workspace name
+        }
+      }
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "4.12.1"
     }
   }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = "ap-south-1" # define region as per your account
 }
 
 resource "aws_instance" "example" {
@@ -16,4 +26,3 @@ resource "aws_instance" "example" {
           Name = "terraform-example"
          }
 }
-
