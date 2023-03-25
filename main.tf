@@ -1,16 +1,8 @@
 terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-    random = {
-      source = "hashicorp/random"
-    }
-  }
-
-  cloud {
+  backend "remote" {
+    hostname = "app.terraform.io"
     organization = "gh-task"
-
+    token = "hpnMvsl2GS8Mhg.atlasv1.431gO6ySrb4zpiqbSrFypkgbFf8ceqNr5b7uAUQNjsyJ34qn1YeKszGuFzydEWOY9ug"
     workspaces {
       name = "ecs_tf"
     }
